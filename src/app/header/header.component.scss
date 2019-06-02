@@ -1,0 +1,16 @@
+@import '../../scss/vars';
+
+header {
+  height: 10vh;
+  background: $darkblue;
+  color: #FFFAFA;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .logo2 {
+    color: $redish;
+    font-weight: bold;
+  }
+}

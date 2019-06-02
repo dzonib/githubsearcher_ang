@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="favs">
+    <app-favorites
+      [queryLink]="queryLink"
+      (fireFavQuery)="handleClick($event)"
+    ></app-favorites>
+  </div>
+
+  <div class="nonFavs">
+    <div class="input">
+      <label>Please enter repository name</label>
+
+      <input
+        type="text"
+        [(ngModel)]="queryLink"
+        placeholder="Repository name"
+      />
+      <button class="searchBtn" [disabled]="!queryLink" (click)="handleClick()">
+        Search
+      </button>
+    </div>
+
+    <img *ngIf="showLoader" src="../../../assets/loading.gif" alt="Loading">
+    <ul *ngIf="queries" class="queries">
+      <app-repo *ngFor="let query of queries" [repo]="query"></app-repo>
+    </ul>
+
+    <ul *ngIf="total">
+      <li
+        class="page"
+        *ngFor="let item of total; let i = index"
+        [ngClass]="{'active': i+1 === page}"
+        (click)="setPage(i + 1)"
+      >
+        {{ i + 1 }}
+      </li>
+    </ul>
+  </div>
+</div>

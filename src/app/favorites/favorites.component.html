@@ -1,0 +1,10 @@
+<button [disabled]="!queryLink" (click)="addToFavorites()">Add to favorites</button>
+
+<h1>Favorites:</h1>
+<h2 *ngIf="message">{{message}}</h2>
+<ul>
+  <li *ngFor="let fav of favorites; let i = index">
+    <span class="repo" (click)="fireQuery(fav)">{{ i + 1 }}. {{ fav }}</span>
+    <span class="remove" (click)="removeFav(fav)">x</span>
+  </li>
+</ul>

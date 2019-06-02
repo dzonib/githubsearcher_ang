@@ -7,8 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
 import { RepoComponent } from './components/repo/repo.component';
-import { HeaderComponent } from './header/header.component';
-import { FavoritesComponent } from './favorites/favorites.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 
 @NgModule({
   declarations: [AppComponent, SearchComponent, RepoComponent, HeaderComponent, FavoritesComponent],
